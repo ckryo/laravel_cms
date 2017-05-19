@@ -26,7 +26,7 @@ class PushController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'type' => $request->type,
-            'previews' => json_encode($request->previews, JSON_UNESCAPED_UNICODE),
+            'previews' => $request->previews,
             'org_id' => $admin->org_id
         ]);
 

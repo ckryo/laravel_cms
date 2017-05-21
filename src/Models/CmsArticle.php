@@ -21,7 +21,7 @@ class CmsArticle extends Model
 
 
     function author () {
-        $this->belongsTo(User::class, 'author_id');
+        return $this->belongsTo(User::class, 'author_id')->select('id', 'name', 'role_id', 'org_id', 'avatar');
     }
 
 }

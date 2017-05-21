@@ -8,6 +8,7 @@
 
 namespace Ckryo\Laravel\Cms\Models;
 
+use Ckryo\Laravel\Admin\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class CmsArticle extends Model
@@ -16,6 +17,11 @@ class CmsArticle extends Model
     protected $table = 'cms_articles';
     protected $connection = 'mysql';
 
-    protected $fillable = ['title', 'content', 'type', 'previews', 'org_id'];
+    protected $fillable = ['title', 'content', 'type', 'previews', 'author_id'];
+
+
+    function author () {
+        $this->belongsTo(User::class, 'author_id');
+    }
 
 }

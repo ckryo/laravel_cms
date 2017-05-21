@@ -5,5 +5,7 @@ Route::group(['namespace' => 'Ckryo\Laravel\Cms\Controllers', 'prefix' => 'cms']
     $router->group(['middleware' => 'auth'], function ($router) {
         // 头像上传
         $router->resource('push', 'PushController');
+
+        $router->resource('news', 'NewsController');
     });
 });

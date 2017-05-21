@@ -26,7 +26,7 @@ class PushController extends Controller
                 'content' => $request->content,
                 'type' => $request->type,
                 'previews' => $request->previews,
-                'org_id' => $admin->org_id
+                'author' => $admin->id
             ]);
 
             logi($admin->id, 'cms_article', $art->id, 'create:'.$request->type, '发布了文章:'.$request->title, json_encode($request->all(), JSON_UNESCAPED_UNICODE));

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Ckryo\Laravel\Admin\Auth;
 use Ckryo\Laravel\Cms\Models\CmsArticle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 // 用于文件、附件上传
 class PushController extends Controller
 {
@@ -19,7 +21,7 @@ class PushController extends Controller
             'content.required' => '内容不能为空',
         ]);
 
-        db_transaction(function () use ($request, $auth) {
+        DB::transaction(function () use ($request, $auth) {
             $admin = $auth->user();
             $art = CmsArticle::create([
                 'title' => $request->title,

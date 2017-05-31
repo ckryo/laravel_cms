@@ -6,5 +6,5 @@ class NewsController extends CmsController
 {
 
     protected $type = 'news';
-
+    protected $description_name = "新闻";
 }

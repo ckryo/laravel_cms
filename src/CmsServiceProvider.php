@@ -2,7 +2,7 @@
 
 namespace Ckryo\Laravel\Cms;
 
-use Ckryo\Laravel\Http\ErrorCode;
+use Ckryo\Laravel\Handler\Facades\ErrorCode;
 use Illuminate\Support\ServiceProvider;
 
 class CmsServiceProvider extends ServiceProvider

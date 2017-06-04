@@ -2,8 +2,8 @@
 
 namespace Ckryo\Laravel\Cms\Controllers;
 
-use App\Http\Controllers\Controller;
-use Ckryo\Laravel\Admin\Auth;
+use Ckryo\Laravel\App\Http\Controllers\Controller;
+use Ckryo\Laravel\Auth\Auth;
 use Ckryo\Laravel\Cms\Models\CmsArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

@@ -7,5 +7,6 @@ Route::group(['namespace' => 'Ckryo\Laravel\Cms\Controllers', 'prefix' => 'cms']
         $router->resource('push', 'PushController');
 
         $router->resource('news', 'NewsController');
+        $router->resource('notice', 'NoticeController');
     });
 });

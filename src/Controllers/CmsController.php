@@ -2,8 +2,11 @@
 
 namespace Ckryo\Laravel\Cms\Controllers;
 
-use App\Http\Controllers\Controller;
+use Ckryo\Laravel\App\Http\Controllers\Controller;
+use Ckryo\Laravel\Auth\Auth;
 use Ckryo\Laravel\Cms\Models\CmsArticle;
+use Ckryo\Laravel\Logi\Facades\Logi;
+use Illuminate\Support\Facades\DB;
 
 abstract class CmsController extends Controller
 {

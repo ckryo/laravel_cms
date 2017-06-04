@@ -5,6 +5,7 @@ namespace Ckryo\Laravel\Cms\Controllers;
 use Ckryo\Laravel\App\Http\Controllers\Controller;
 use Ckryo\Laravel\Auth\Auth;
 use Ckryo\Laravel\Cms\Models\CmsArticle;
+use Ckryo\Laravel\Logi\Facades\Logi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +32,7 @@ class PushController extends Controller
                 'author_id' => $admin->id
             ]);
 
-            logi($admin->id, 'cms_article', $art->id, 'create:'.$request->type, '发布了文章:'.$request->title, json_encode($request->all(), JSON_UNESCAPED_UNICODE));
+            Logi::action($admin->id, 'cms_article', $art->id, 'create:'.$request->type, '发布了文章:'.$request->title, json_encode($request->all(), JSON_UNESCAPED_UNICODE));
         });
 
         return response()->ok('发布成功', '/cms/'.$request->type);

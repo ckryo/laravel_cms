@@ -4,6 +4,7 @@ namespace Ckryo\Laravel\Cms\Controllers;
 
 use Ckryo\Laravel\App\Http\Controllers\Controller;
 use Ckryo\Laravel\Cms\Models\CmsArticle;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {

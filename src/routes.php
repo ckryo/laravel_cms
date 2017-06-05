@@ -3,6 +3,7 @@
 Route::group(['namespace' => 'Ckryo\Laravel\Cms\Controllers', 'prefix' => 'cms'], function ($router) {
 
 
+    $router->get('index', 'IndexController@index');
     $router->get('news', 'NewsController@index');
     $router->get('notice', 'NoticeController@index');
     $router->get('faq', 'FaqeController@index');

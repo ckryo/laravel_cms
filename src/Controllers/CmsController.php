@@ -40,12 +40,12 @@ abstract class CmsController extends Controller
             $sqlWhere = $this->getModel()->whereIn('id', $items);
             $sqlData = $sqlWhere->get();
             if (count($sqlData) > 1) {
-                Logi::action(0, 'admin_role', 0, 'deletes', $this->getDestroyMessageWithDatas($sqlData), json_encode($sqlData->toArray(), JSON_UNESCAPED_UNICODE));
+                Logi::action(0, 'cms', 0, 'deletes', $this->getDestroyMessageWithDatas($sqlData), json_encode($sqlData->toArray(), JSON_UNESCAPED_UNICODE));
             } elseif (count($sqlData) === 1) {
                 $data = $sqlData->first();
-                Logi::action($admin->id, 'admin_role', $data->id, 'delete', $this->getDestroyMessageWithSinge($data), json_encode($data->toArray(), JSON_UNESCAPED_UNICODE));
+                Logi::action($admin->id, 'cms', $data->id, 'delete', $this->getDestroyMessageWithSinge($data), json_encode($data->toArray(), JSON_UNESCAPED_UNICODE));
             }
-            $sqlData->delete();
+            $sqlWhere->delete();
         });
         return response()->ok('操作成功');
     }

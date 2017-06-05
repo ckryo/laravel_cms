@@ -5,6 +5,7 @@ Route::group(['namespace' => 'Ckryo\Laravel\Cms\Controllers', 'prefix' => 'cms']
 
     $router->get('news', 'NewsController@index');
     $router->get('notice', 'NoticeController@index');
+    $router->get('faq', 'FaqeController@index');
 
 
     $router->group(['middleware' => 'auth'], function ($router) {
@@ -13,5 +14,6 @@ Route::group(['namespace' => 'Ckryo\Laravel\Cms\Controllers', 'prefix' => 'cms']
 
         $router->resource('news', 'NewsController');
         $router->resource('notice', 'NoticeController');
+        $router->resource('faq', 'FaqeController');
     });
 });

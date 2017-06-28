@@ -10,7 +10,6 @@ class IndexController extends Controller
 {
 
     function index () {
-        dd('asd');
         $result = CmsArticle::select('type', DB::raw('count(id) as count'))->groupBy('type')->get()->toArray();
         $new_array = [];
         foreach ($result as $item) $new_array[$item['type']] = $item['count'];

@@ -10,11 +10,11 @@ Route::group(['namespace' => 'Ckryo\Laravel\Cms\Controllers', 'prefix' => 'cms']
 
 
     $router->group(['middleware' => 'auth'], function ($router) {
-        // 文章发布
+        // 头像上传
         $router->resource('push', 'PushController');
 
-        $router->delete('news', 'NewsController@destory');
-        $router->delete('notice', 'NoticeController@destory');
-        $router->delete('faq', 'FaqController@destory');
+        $router->delete('news/{item_str}', 'NewsController@destroy');
+        $router->delete('notice/{item_str}', 'NoticeController@destroy');
+        $router->delete('faq/{item_str}', 'FaqController@destroy');
     });
 });
